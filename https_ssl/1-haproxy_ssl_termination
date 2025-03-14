@@ -1,0 +1,9 @@
+
+frontend http_front
+    bind *:80
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server 6460-web-01 44.201.81.45:80 check
+    server 6460-web-02 54.175.4.97:80 check
